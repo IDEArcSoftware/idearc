@@ -166,9 +166,11 @@
         <button class="lang-btn active" data-lang-btn data-lang="tr">TR</button>
         <button class="lang-btn" data-lang-btn data-lang="en">EN</button>
         <button class="lang-btn" data-lang-btn data-lang="bg">BG</button>
-        <button class="lang-btn" data-lang-btn data-lang="ar">AR</button>
+        <button class="lang-btn" data-lang-btn data-lang="ar"><span class="lang-ar-long">العربية</span><span class="lang-ar-short">عربي</span></button>
       </div>
-      <div class="socials" aria-label="Sosyal medya">
+      <div class="social-compact">
+        <button class="social-toggle" type="button" data-social-toggle aria-expanded="false" aria-controls="socialMenu" data-i18n="socialToggleLabel">Sosyal</button>
+        <div class="socials" id="socialMenu" data-social-menu aria-label="Sosyal medya">
         <a href="https://www.linkedin.com/company/idearccomtr" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg aria-hidden="true"><use href="#icon-ln"></use></svg>
         </a>
@@ -184,6 +186,7 @@
         <a href="https://www.youtube.com/@IDEArcLLC" target="_blank" rel="noopener" aria-label="YouTube">
           <svg aria-hidden="true"><use href="#icon-yt"></use></svg>
         </a>
+        </div>
       </div>
     </div>
   </header>
@@ -199,8 +202,21 @@
           <article class="award-card" role="listitem">
             <span class="award-count" aria-hidden="true">01</span>
             <div class="award-content">
-              <h3 data-i18n="awardTaksimTitle">Taksim Meydanı Kentsel Tasarım Yarışması</h3>
-              <p class="award-summary" data-i18n="awardTaksimSummary">Birincilik ödülü – Ulaşım planlama ve trafik danışmanlığı</p>
+              <h3 data-i18n="awardBursaSetbasiTitle">Bursa Setbaşı-Yeşil-Emirsultan Tarihi Aksı Kentsel Tasarım Fikir Yarışması</h3>
+              <p class="award-summary" data-i18n="awardBursaSetbasiSummary">Eşdeğer mansiyon (Aralık 2025) – Kentsel Nakış projesi</p>
+              <div class="award-badge" aria-hidden="true">
+                <svg class="award-wreath" viewBox="0 0 64 64" focusable="false">
+                  <use href="#icon-wreath"></use>
+                  <text x="32" y="37" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">M</text>
+                </svg>
+              </div>
+            </div>
+          </article>
+          <article class="award-card" role="listitem">
+            <span class="award-count" aria-hidden="true">02</span>
+            <div class="award-content">
+              <h3 data-i18n="awardBesOcakTitle">5 Ocak Parkı ve Yakın Çevresi Kentsel Tasarım Yarışması</h3>
+              <p class="award-summary" data-i18n="awardBesOcakSummary">Birincilik ödülü (Mart 2022) – Kentsel tasarım ve ulaşım danışmanlığı</p>
               <div class="award-badge" aria-hidden="true">
                 <svg class="award-wreath" viewBox="0 0 64 64" focusable="false">
                   <use href="#icon-wreath"></use>
@@ -210,23 +226,10 @@
             </div>
           </article>
           <article class="award-card" role="listitem">
-            <span class="award-count" aria-hidden="true">02</span>
-            <div class="award-content">
-              <h3 data-i18n="awardIzmirTitle">İzmir Büyükşehir Belediyesi Ana Transfer Merkezi Mimari Proje Yarışması</h3>
-              <p class="award-summary" data-i18n="awardIzmirSummary">Üçüncülük ödülü – Ulaşım planlama ve trafik danışmanlığı</p>
-              <div class="award-badge" aria-hidden="true">
-                <svg class="award-wreath" viewBox="0 0 64 64" focusable="false">
-                  <use href="#icon-wreath"></use>
-                  <text x="32" y="37" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">3</text>
-                </svg>
-              </div>
-            </div>
-          </article>
-          <article class="award-card" role="listitem">
             <span class="award-count" aria-hidden="true">03</span>
             <div class="award-content">
-              <h3 data-i18n="awardKadikoyTitle">Kadıköy Meydanı Kentsel Tasarım Yarışması</h3>
-              <p class="award-summary" data-i18n="awardKadikoySummary">Üçüncü mansiyon – Ulaşım planlama ve trafik danışmanlığı</p>
+              <h3 data-i18n="awardAntakyaTitle">Antakya Köprübaşı Kent Meydanı ve Yakın Çevresi Kentsel Tasarım Proje Yarışması</h3>
+              <p class="award-summary" data-i18n="awardAntakyaSummary">Üçüncü mansiyon (Kasım 2021) – Kentsel tasarım ve ulaşım danışmanlığı</p>
               <div class="award-badge" aria-hidden="true">
                 <svg class="award-wreath" viewBox="0 0 64 64" focusable="false">
                   <use href="#icon-wreath"></use>
@@ -238,60 +241,8 @@
           <article class="award-card" role="listitem">
             <span class="award-count" aria-hidden="true">04</span>
             <div class="award-content">
-              <h3 data-i18n="awardBuffaloTitle">Aim for the Sky: Buffalo Skyway Corridor Competition</h3>
-              <p class="award-summary" data-i18n="awardBuffaloSummary">United States of America · Kısa liste – Ulaşım planlama ve trafik danışmanlığı</p>
-              <div class="award-badge" aria-hidden="true">
-                <svg class="award-wreath" viewBox="0 0 64 64" focusable="false">
-                  <use href="#icon-wreath"></use>
-                  <text x="32" y="37" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">S</text>
-                </svg>
-              </div>
-            </div>
-          </article>
-          <article class="award-card" role="listitem">
-            <span class="award-count" aria-hidden="true">05</span>
-            <div class="award-content">
-              <h3 data-i18n="awardElazigTitle">Elazığ Kent Meydanı Kentsel Tasarım Yarışması</h3>
-              <p class="award-summary" data-i18n="awardElazigSummary">Birincilik ödülü – Ulaşım planlama ve trafik danışmanlığı</p>
-              <div class="award-badge" aria-hidden="true">
-                <svg class="award-wreath" viewBox="0 0 64 64" focusable="false">
-                  <use href="#icon-wreath"></use>
-                  <text x="32" y="37" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">1</text>
-                </svg>
-              </div>
-            </div>
-          </article>
-          <article class="award-card" role="listitem">
-            <span class="award-count" aria-hidden="true">06</span>
-            <div class="award-content">
-              <h3 data-i18n="awardMakkahTitle">Mekke – Rua Al Haram</h3>
-              <p class="award-summary" data-i18n="awardMakkahSummary">İkincilik ödülü – Ulaşım planlama ve trafik danışmanlığı</p>
-              <div class="award-badge" aria-hidden="true">
-                <svg class="award-wreath" viewBox="0 0 64 64" focusable="false">
-                  <use href="#icon-wreath"></use>
-                  <text x="32" y="37" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">2</text>
-                </svg>
-              </div>
-            </div>
-          </article>
-          <article class="award-card" role="listitem">
-            <span class="award-count" aria-hidden="true">07</span>
-            <div class="award-content">
-              <h3 data-i18n="awardAntakyaTitle">Antakya Köprübaşı Kent Meydanı ve Yakın Çevresi Kentsel Tasarım Proje Yarışması</h3>
-              <p class="award-summary" data-i18n="awardAntakyaSummary">Üçüncü mansiyon – Kentsel tasarım ve ulaşım danışmanlığı</p>
-              <div class="award-badge" aria-hidden="true">
-                <svg class="award-wreath" viewBox="0 0 64 64" focusable="false">
-                  <use href="#icon-wreath"></use>
-                  <text x="32" y="37" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">M</text>
-                </svg>
-              </div>
-            </div>
-          </article>
-          <article class="award-card" role="listitem">
-            <span class="award-count" aria-hidden="true">08</span>
-            <div class="award-content">
               <h3 data-i18n="awardBuyukadaTitle">Büyükada Fayton Meydanı Kentsel Tasarım Yarışması</h3>
-              <p class="award-summary" data-i18n="awardBuyukadaSummary">Üçüncülük ödülü – Kentsel tasarım ve ulaşım danışmanlığı</p>
+              <p class="award-summary" data-i18n="awardBuyukadaSummary">Üçüncülük ödülü (Haziran 2021) – Kentsel tasarım ve ulaşım danışmanlığı</p>
               <div class="award-badge" aria-hidden="true">
                 <svg class="award-wreath" viewBox="0 0 64 64" focusable="false">
                   <use href="#icon-wreath"></use>
@@ -301,14 +252,79 @@
             </div>
           </article>
           <article class="award-card" role="listitem">
-            <span class="award-count" aria-hidden="true">09</span>
+            <span class="award-count" aria-hidden="true">05</span>
             <div class="award-content">
-              <h3 data-i18n="awardBesOcakTitle">5 Ocak Parkı ve Yakın Çevresi Kentsel Tasarım Yarışması</h3>
-              <p class="award-summary" data-i18n="awardBesOcakSummary">Birincilik ödülü – Kentsel tasarım ve ulaşım danışmanlığı</p>
+              <h3 data-i18n="awardKadikoyTitle">Kadıköy Meydanı Kentsel Tasarım Yarışması</h3>
+              <p class="award-summary" data-i18n="awardKadikoySummary">Üçüncü mansiyon (Ekim 2020) – Ulaşım planlama ve trafik danışmanlığı</p>
+              <div class="award-badge" aria-hidden="true">
+                <svg class="award-wreath" viewBox="0 0 64 64" focusable="false">
+                  <use href="#icon-wreath"></use>
+                  <text x="32" y="37" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">M</text>
+                </svg>
+              </div>
+            </div>
+          </article>
+          <article class="award-card" role="listitem">
+            <span class="award-count" aria-hidden="true">06</span>
+            <div class="award-content">
+              <h3 data-i18n="awardTaksimTitle">Taksim Meydanı Kentsel Tasarım Yarışması</h3>
+              <p class="award-summary" data-i18n="awardTaksimSummary">Birincilik ödülü (Eylül 2020) – Ulaşım planlama ve trafik danışmanlığı</p>
               <div class="award-badge" aria-hidden="true">
                 <svg class="award-wreath" viewBox="0 0 64 64" focusable="false">
                   <use href="#icon-wreath"></use>
                   <text x="32" y="37" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">1</text>
+                </svg>
+              </div>
+            </div>
+          </article>
+          <article class="award-card" role="listitem">
+            <span class="award-count" aria-hidden="true">07</span>
+            <div class="award-content">
+              <h3 data-i18n="awardIzmirTitle">İzmir Büyükşehir Belediyesi Ana Transfer Merkezi Mimari Proje Yarışması</h3>
+              <p class="award-summary" data-i18n="awardIzmirSummary">Üçüncülük ödülü (Eylül 2020) – Ulaşım planlama ve trafik danışmanlığı</p>
+              <div class="award-badge" aria-hidden="true">
+                <svg class="award-wreath" viewBox="0 0 64 64" focusable="false">
+                  <use href="#icon-wreath"></use>
+                  <text x="32" y="37" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">3</text>
+                </svg>
+              </div>
+            </div>
+          </article>
+          <article class="award-card" role="listitem">
+            <span class="award-count" aria-hidden="true">08</span>
+            <div class="award-content">
+              <h3 data-i18n="awardBuffaloTitle">Aim for the Sky: Buffalo Skyway Corridor Competition</h3>
+              <p class="award-summary" data-i18n="awardBuffaloSummary">United States of America · Kısa liste (Ocak 2020) – Ulaşım planlama ve trafik danışmanlığı</p>
+              <div class="award-badge" aria-hidden="true">
+                <svg class="award-wreath" viewBox="0 0 64 64" focusable="false">
+                  <use href="#icon-wreath"></use>
+                  <text x="32" y="37" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">S</text>
+                </svg>
+              </div>
+            </div>
+          </article>
+          <article class="award-card" role="listitem">
+            <span class="award-count" aria-hidden="true">09</span>
+            <div class="award-content">
+              <h3 data-i18n="awardElazigTitle">Elazığ Kent Meydanı Kentsel Tasarım Yarışması</h3>
+              <p class="award-summary" data-i18n="awardElazigSummary">Birincilik ödülü (Temmuz 2017) – Ulaşım planlama ve trafik danışmanlığı</p>
+              <div class="award-badge" aria-hidden="true">
+                <svg class="award-wreath" viewBox="0 0 64 64" focusable="false">
+                  <use href="#icon-wreath"></use>
+                  <text x="32" y="37" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">1</text>
+                </svg>
+              </div>
+            </div>
+          </article>
+          <article class="award-card" role="listitem">
+            <span class="award-count" aria-hidden="true">10</span>
+            <div class="award-content">
+              <h3 data-i18n="awardMakkahTitle">Mekke – Rua Al Haram</h3>
+              <p class="award-summary" data-i18n="awardMakkahSummary">İkincilik ödülü (Yıl belirtilmedi) – Ulaşım planlama ve trafik danışmanlığı</p>
+              <div class="award-badge" aria-hidden="true">
+                <svg class="award-wreath" viewBox="0 0 64 64" focusable="false">
+                  <use href="#icon-wreath"></use>
+                  <text x="32" y="37" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">2</text>
                 </svg>
               </div>
             </div>

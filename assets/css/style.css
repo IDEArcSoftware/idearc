@@ -140,6 +140,14 @@ nav a:hover {
   color: #fff;
 }
 
+.lang-ar-long {
+  display: inline;
+}
+
+.lang-ar-short {
+  display: none;
+}
+
 .nav-toggle {
   display: none;
   background: transparent;
@@ -153,6 +161,35 @@ nav a:hover {
 .socials {
   display: flex;
   gap: 12px;
+}
+
+.social-compact {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.social-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #050708;
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.social-toggle:hover,
+.social-toggle:focus-visible {
+  background: #0f151b;
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .socials a {
@@ -903,6 +940,57 @@ textarea {
   justify-content: flex-end;
 }
 
+@media (min-width: 961px) {
+  .social-toggle {
+    display: inline-flex;
+  }
+
+  .social-compact .socials {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 25;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: rgba(4, 9, 17, 0.96);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  }
+
+  .social-compact .socials.open {
+    display: flex;
+  }
+
+  body[dir="rtl"] .social-compact .socials {
+    right: auto;
+    left: 0;
+  }
+}
+
+@media (min-width: 961px) and (max-width: 1200px) {
+  .site-header .container {
+    gap: 12px;
+  }
+
+  .site-header nav {
+    gap: 12px;
+  }
+
+  .site-header nav a {
+    font-size: 0.92rem;
+  }
+
+  .lang-ar-long {
+    display: none;
+  }
+
+  .lang-ar-short {
+    display: inline;
+  }
+}
+
 @media (max-width: 960px) {
   .site-header .container {
     flex-wrap: wrap;
@@ -934,11 +1022,24 @@ textarea {
   }
 
   .lang-toggle,
-  .socials {
+  .social-compact {
     display: flex;
     width: 100%;
     justify-content: center;
     order: 5;
+  }
+
+  .social-toggle {
+    display: none;
+  }
+
+  .social-compact .socials {
+    position: static;
+    display: flex;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
   }
 }
 

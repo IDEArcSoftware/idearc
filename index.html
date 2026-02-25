@@ -153,9 +153,11 @@
         <button class="lang-btn active" data-lang-btn data-lang="tr">TR</button>
         <button class="lang-btn" data-lang-btn data-lang="en">EN</button>
         <button class="lang-btn" data-lang-btn data-lang="bg">BG</button>
-        <button class="lang-btn" data-lang-btn data-lang="ar">AR</button>
+        <button class="lang-btn" data-lang-btn data-lang="ar"><span class="lang-ar-long">العربية</span><span class="lang-ar-short">عربي</span></button>
       </div>
-      <div class="socials" aria-label="Sosyal medya">
+      <div class="social-compact">
+        <button class="social-toggle" type="button" data-social-toggle aria-expanded="false" aria-controls="socialMenu" data-i18n="socialToggleLabel">Sosyal</button>
+        <div class="socials" id="socialMenu" data-social-menu aria-label="Sosyal medya">
         <a href="https://www.linkedin.com/company/idearccomtr" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg aria-hidden="true"><use href="#icon-ln"></use></svg>
         </a>
@@ -171,6 +173,7 @@
         <a href="https://www.youtube.com/@IDEArcLLC" target="_blank" rel="noopener" aria-label="YouTube">
           <svg aria-hidden="true"><use href="#icon-yt"></use></svg>
         </a>
+        </div>
       </div>
     </div>
   </header>

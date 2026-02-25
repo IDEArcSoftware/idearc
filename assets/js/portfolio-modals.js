@@ -2,56 +2,8 @@ import { onLanguageChange, t } from './i18n.js';
 
 const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
-const PORTFOLIO_MODAL_CONTENT = {
-  projectYalovaTitle: {
-    challengeKey: 'projectYalovaChallenge',
-    solutionKey: 'projectYalovaSolution',
-    outcomeKey: 'projectYalovaOutcome',
-    externalUrl: ''
-  },
-  projectAskoopTitle: {
-    challengeKey: 'projectAskoopChallenge',
-    solutionKey: 'projectAskoopSolution',
-    outcomeKey: 'projectAskoopOutcome',
-    externalUrl: ''
-  },
-  projectElazigTitle: {
-    challengeKey: 'projectElazigChallenge',
-    solutionKey: 'projectElazigSolution',
-    outcomeKey: 'projectElazigOutcome',
-    externalUrl: ''
-  },
-  projectIbbTitle: {
-    challengeKey: 'projectIbbChallenge',
-    solutionKey: 'projectIbbSolution',
-    outcomeKey: 'projectIbbOutcome',
-    externalUrl: 'https://www.ibb.istanbul'
-  },
-  projectKoyTitle: {
-    challengeKey: 'projectKoyChallenge',
-    solutionKey: 'projectKoySolution',
-    outcomeKey: 'projectKoyOutcome',
-    externalUrl: ''
-  },
-  projectDesbTitle: {
-    challengeKey: 'projectDesbChallenge',
-    solutionKey: 'projectDesbSolution',
-    outcomeKey: 'projectDesbOutcome',
-    externalUrl: ''
-  },
-  projectManisaTitle: {
-    challengeKey: 'projectManisaChallenge',
-    solutionKey: 'projectManisaSolution',
-    outcomeKey: 'projectManisaOutcome',
-    externalUrl: ''
-  },
-  projectIgtodTitle: {
-    challengeKey: 'projectIgtodChallenge',
-    solutionKey: 'projectIgtodSolution',
-    outcomeKey: 'projectIgtodOutcome',
-    externalUrl: ''
-  }
-};
+// Project-specific modal content is intentionally left empty until updated details are provided.
+const PORTFOLIO_MODAL_CONTENT = {};
 
 let projects = [];
 let modalOverlayEl;
@@ -212,9 +164,10 @@ function buildModal() {
 function renderModal(project) {
   const title = resolveText(project.titleKey, project.titleFallback);
   const teaser = resolveText(project.descKey, project.descFallback);
-  const challenge = resolveText(project.challengeKey, teaser);
-  const solution = resolveText(project.solutionKey, teaser);
-  const outcome = resolveText(project.outcomeKey, teaser);
+  const detailsFallback = teaser || t('portfolioDetailsSoon', teaser);
+  const challenge = resolveText(project.challengeKey, detailsFallback);
+  const solution = resolveText(project.solutionKey, detailsFallback);
+  const outcome = resolveText(project.outcomeKey, detailsFallback);
 
   modalRefs.title.textContent = title;
   modalRefs.teaser.textContent = teaser;

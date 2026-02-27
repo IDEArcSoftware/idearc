@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IDEArc Local Portfolio Dashboard</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/dashboard.css" />
+</head>
+<body class="dashboard-page">
+  <main class="dashboard-wrap">
+    <header class="dashboard-header dashboard-panel">
+      <div class="dashboard-title">
+        <h1>Portfolio Dashboard</h1>
+        <p>Local editor for <code>portfoy.html</code> and <code>assets/js/translations.js</code>.</p>
+      </div>
+      <div class="dashboard-actions">
+        <button id="selectFolderBtn" class="btn secondary" type="button">Select Folder</button>
+        <button id="loadBtn" class="btn secondary" type="button">Load</button>
+        <button id="saveBtn" class="btn primary" type="button">Save</button>
+        <button id="previewBtn" class="btn secondary" type="button">Preview portfoy.html</button>
+        <button id="exportHtmlBtn" class="btn secondary" type="button">Export HTML</button>
+        <button id="exportTranslationsBtn" class="btn secondary" type="button">Export translations.js</button>
+      </div>
+      <div id="statusBanner" class="status-banner" data-type="info" role="status" aria-live="polite">
+        Pick your project folder, then load files.
+      </div>
+    </header>
+
+    <section class="dashboard-main">
+      <aside class="dashboard-panel">
+        <div class="panel-header">
+          <h2>Entries</h2>
+          <button id="addEntryBtn" type="button" class="tool-btn">Add entry</button>
+        </div>
+        <ul id="entryList" class="entry-list"></ul>
+      </aside>
+
+      <section class="dashboard-panel dashboard-editor">
+        <h2>Edit Selected Entry</h2>
+        <p class="hint">Title, description and image path are required. External link must start with http:// or https://.</p>
+
+        <form id="entryForm" novalidate>
+          <div class="field-grid">
+            <label>
+              Entry ID
+              <input id="entryId" type="text" readonly />
+            </label>
+
+            <label class="toggle-inline">
+              <input id="entryVisible" type="checkbox" />
+              Visible in portfolio grid
+            </label>
+
+            <label>
+              Badge (TR)
+              <input id="entryBadgeTr" type="text" maxlength="120" />
+            </label>
+
+            <label>
+              Image path
+              <input id="entryImageSrc" type="text" placeholder="./media/uploads/example.jpg" />
+            </label>
+
+            <label class="full">
+              Title (TR)
+              <input id="entryTitleTr" type="text" maxlength="180" />
+            </label>
+
+            <label class="full">
+              Description (TR)
+              <textarea id="entryDescTr"></textarea>
+            </label>
+
+            <label class="full">
+              Modal challenge (TR)
+              <textarea id="entryModalChallengeTr"></textarea>
+            </label>
+
+            <label class="full">
+              Modal solution (TR)
+              <textarea id="entryModalSolutionTr"></textarea>
+            </label>
+
+            <label class="full">
+              Modal outcome (TR)
+              <textarea id="entryModalOutcomeTr"></textarea>
+            </label>
+
+            <label class="full">
+              External link
+              <input id="entryExternalUrl" type="url" placeholder="https://example.com" />
+            </label>
+          </div>
+        </form>
+
+        <div class="image-preview">
+          <img id="imagePreview" alt="" hidden />
+          <p id="imagePlaceholder" class="image-placeholder">No preview available.</p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="./assets/js/portfolio-dashboard.js"></script>
+</body>
+</html>

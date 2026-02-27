@@ -165,9 +165,9 @@ function renderModal(project) {
   const title = resolveText(project.titleKey, project.titleFallback);
   const teaser = resolveText(project.descKey, project.descFallback);
   const detailsFallback = teaser || t('portfolioDetailsSoon', teaser);
-  const challenge = resolveText(project.challengeKey, detailsFallback);
-  const solution = resolveText(project.solutionKey, detailsFallback);
-  const outcome = resolveText(project.outcomeKey, detailsFallback);
+  const challenge = project.modalChallenge || resolveText(project.challengeKey, detailsFallback);
+  const solution = project.modalSolution || resolveText(project.solutionKey, detailsFallback);
+  const outcome = project.modalOutcome || resolveText(project.outcomeKey, detailsFallback);
 
   modalRefs.title.textContent = title;
   modalRefs.teaser.textContent = teaser;
@@ -248,6 +248,10 @@ function extractProject(card, index) {
 
   const titleKey = titleEl.dataset.i18n || '';
   const detailConfig = PORTFOLIO_MODAL_CONTENT[titleKey] || {};
+  const modalChallenge = card.dataset.modalChallenge?.trim() || '';
+  const modalSolution = card.dataset.modalSolution?.trim() || '';
+  const modalOutcome = card.dataset.modalOutcome?.trim() || '';
+  const modalLink = card.dataset.modalLink?.trim() || '';
 
   const badges = Array.from(card.querySelectorAll('.badge')).map((badgeEl) => ({
     key: badgeEl.dataset.i18n || '',
@@ -263,10 +267,13 @@ function extractProject(card, index) {
     descFallback: descEl.textContent?.trim() || '',
     imageSrc: imageEl.getAttribute('src') || '',
     badges,
+    modalChallenge,
+    modalSolution,
+    modalOutcome,
     challengeKey: detailConfig.challengeKey || '',
     solutionKey: detailConfig.solutionKey || '',
     outcomeKey: detailConfig.outcomeKey || '',
-    externalUrl: detailConfig.externalUrl || ''
+    externalUrl: modalLink || detailConfig.externalUrl || ''
   };
 
   return project;

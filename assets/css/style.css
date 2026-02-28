@@ -536,8 +536,8 @@ html.reduce-motion .hero video {
 }
 
 .award-wreath use {
-  fill: none;
-  stroke: currentColor;
+  fill: currentColor;
+  stroke: none;
 }
 
 .award-wreath text {

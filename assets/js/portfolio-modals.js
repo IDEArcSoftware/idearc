@@ -2,8 +2,68 @@ import { onLanguageChange, t } from './i18n.js';
 
 const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
-// Project-specific modal content is intentionally left empty until updated details are provided.
-const PORTFOLIO_MODAL_CONTENT = {};
+const PORTFOLIO_MODAL_CONTENT = {
+  project01Title: {
+    challengeKey: 'project01Challenge',
+    solutionKey: 'project01Solution',
+    outcomeKey: 'project01Outcome'
+  },
+  project02Title: {
+    challengeKey: 'project02Challenge',
+    solutionKey: 'project02Solution',
+    outcomeKey: 'project02Outcome'
+  },
+  project03Title: {
+    challengeKey: 'project03Challenge',
+    solutionKey: 'project03Solution',
+    outcomeKey: 'project03Outcome'
+  },
+  project04Title: {
+    challengeKey: 'project04Challenge',
+    solutionKey: 'project04Solution',
+    outcomeKey: 'project04Outcome'
+  },
+  project05Title: {
+    challengeKey: 'project05Challenge',
+    solutionKey: 'project05Solution',
+    outcomeKey: 'project05Outcome'
+  },
+  project06Title: {
+    challengeKey: 'project06Challenge',
+    solutionKey: 'project06Solution',
+    outcomeKey: 'project06Outcome'
+  },
+  project07Title: {
+    challengeKey: 'project07Challenge',
+    solutionKey: 'project07Solution',
+    outcomeKey: 'project07Outcome'
+  },
+  project10Title: {
+    challengeKey: 'project10Challenge',
+    solutionKey: 'project10Solution',
+    outcomeKey: 'project10Outcome'
+  },
+  project11Title: {
+    challengeKey: 'project11Challenge',
+    solutionKey: 'project11Solution',
+    outcomeKey: 'project11Outcome'
+  },
+  project12Title: {
+    challengeKey: 'project12Challenge',
+    solutionKey: 'project12Solution',
+    outcomeKey: 'project12Outcome'
+  },
+  project08Title: {
+    challengeKey: 'project08Challenge',
+    solutionKey: 'project08Solution',
+    outcomeKey: 'project08Outcome'
+  },
+  project09Title: {
+    challengeKey: 'project09Challenge',
+    solutionKey: 'project09Solution',
+    outcomeKey: 'project09Outcome'
+  }
+};
 
 let projects = [];
 let modalOverlayEl;

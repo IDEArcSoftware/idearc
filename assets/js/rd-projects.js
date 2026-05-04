@@ -6,10 +6,10 @@ const RD_PROJECTS = [
     image: './media/uploads/yalova-01.jpg',
     tagKeys: ['navResearch'],
     titleKey: 'rdProject01Title',
-    teaserKey: 'rdProjectGenericTeaser',
-    challengeKey: 'rdProjectGenericChallenge',
-    solutionKey: 'rdProjectGenericSolution',
-    outcomeKey: 'rdProjectGenericOutcome',
+    teaserKey: 'rdProject01Teaser',
+    challengeKey: 'rdProject01Challenge',
+    solutionKey: 'rdProject01Solution',
+    outcomeKey: 'rdProject01Outcome',
     externalUrl: ''
   },
   {
@@ -17,10 +17,10 @@ const RD_PROJECTS = [
     image: './media/uploads/askoop-01.png',
     tagKeys: ['navResearch'],
     titleKey: 'rdProject02Title',
-    teaserKey: 'rdProjectGenericTeaser',
-    challengeKey: 'rdProjectGenericChallenge',
-    solutionKey: 'rdProjectGenericSolution',
-    outcomeKey: 'rdProjectGenericOutcome',
+    teaserKey: 'rdProject02Teaser',
+    challengeKey: 'rdProject02Challenge',
+    solutionKey: 'rdProject02Solution',
+    outcomeKey: 'rdProject02Outcome',
     externalUrl: ''
   },
   {
@@ -28,10 +28,10 @@ const RD_PROJECTS = [
     image: './media/uploads/elazig-01.jpg',
     tagKeys: ['navResearch'],
     titleKey: 'rdProject03Title',
-    teaserKey: 'rdProjectGenericTeaser',
-    challengeKey: 'rdProjectGenericChallenge',
-    solutionKey: 'rdProjectGenericSolution',
-    outcomeKey: 'rdProjectGenericOutcome',
+    teaserKey: 'rdProject03Teaser',
+    challengeKey: 'rdProject03Challenge',
+    solutionKey: 'rdProject03Solution',
+    outcomeKey: 'rdProject03Outcome',
     externalUrl: ''
   },
   {
@@ -61,10 +61,10 @@ const RD_PROJECTS = [
     image: './media/uploads/manisaeah-01.jpg',
     tagKeys: ['navResearch'],
     titleKey: 'rdProject06Title',
-    teaserKey: 'rdProjectGenericTeaser',
-    challengeKey: 'rdProjectGenericChallenge',
-    solutionKey: 'rdProjectGenericSolution',
-    outcomeKey: 'rdProjectGenericOutcome',
+    teaserKey: 'rdProject06Teaser',
+    challengeKey: 'rdProject06Challenge',
+    solutionKey: 'rdProject06Solution',
+    outcomeKey: 'rdProject06Outcome',
     externalUrl: ''
   },
   {
@@ -72,10 +72,10 @@ const RD_PROJECTS = [
     image: './media/uploads/igtod-01.jpg',
     tagKeys: ['navResearch'],
     titleKey: 'rdProject07Title',
-    teaserKey: 'rdProjectGenericTeaser',
-    challengeKey: 'rdProjectGenericChallenge',
-    solutionKey: 'rdProjectGenericSolution',
-    outcomeKey: 'rdProjectGenericOutcome',
+    teaserKey: 'rdProject07Teaser',
+    challengeKey: 'rdProject07Challenge',
+    solutionKey: 'rdProject07Solution',
+    outcomeKey: 'rdProject07Outcome',
     externalUrl: ''
   },
   {
@@ -116,13 +116,19 @@ const RD_PROJECTS = [
     image: './media/uploads/yalova-01.jpg',
     tagKeys: ['navResearch'],
     titleKey: 'rdProject11Title',
-    teaserKey: 'rdProjectGenericTeaser',
-    challengeKey: 'rdProjectGenericChallenge',
-    solutionKey: 'rdProjectGenericSolution',
-    outcomeKey: 'rdProjectGenericOutcome',
+    teaserKey: 'rdProject11Teaser',
+    challengeKey: 'rdProject11Challenge',
+    solutionKey: 'rdProject11Solution',
+    outcomeKey: 'rdProject11Outcome',
     externalUrl: ''
   }
 ];
+
+const VISIBLE_RD_PROJECT_IDS = ['rd-01', 'rd-02', 'rd-07', 'rd-03', 'rd-06', 'rd-11'];
+const RD_PROJECT_TITLE_OVERRIDES = {
+  'rd-06': 'GIS',
+  'rd-07': 'STREAM'
+};
 
 const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
@@ -152,6 +158,16 @@ function getProjectById(projectId) {
   return RD_PROJECTS.find((project) => project.id === projectId);
 }
 
+function getVisibleProjects() {
+  return VISIBLE_RD_PROJECT_IDS
+    .map((id) => getProjectById(id))
+    .filter(Boolean);
+}
+
+function getProjectTitle(project) {
+  return RD_PROJECT_TITLE_OVERRIDES[project.id] ?? t(project.titleKey);
+}
+
 function createBadge(tagKey) {
   const badge = document.createElement('span');
   badge.className = 'badge';
@@ -168,7 +184,7 @@ function createProjectCard(project) {
 
   const image = document.createElement('img');
   image.src = project.image;
-  image.alt = t(project.titleKey);
+  image.alt = getProjectTitle(project);
 
   const body = document.createElement('div');
   body.className = 'project-body';
@@ -180,7 +196,7 @@ function createProjectCard(project) {
   });
 
   const title = document.createElement('h3');
-  title.textContent = t(project.titleKey);
+  title.textContent = getProjectTitle(project);
 
   const teaser = document.createElement('p');
   teaser.textContent = t(project.teaserKey);
@@ -202,11 +218,13 @@ function createProjectCard(project) {
 function renderProjectGrid() {
   if (!gridEl) return;
 
+  const visibleProjects = getVisibleProjects();
   const fragment = document.createDocumentFragment();
-  RD_PROJECTS.forEach((project) => {
+  visibleProjects.forEach((project) => {
     fragment.appendChild(createProjectCard(project));
   });
 
+  gridEl.classList.toggle('research-grid-six', visibleProjects.length === 6);
   gridEl.replaceChildren(fragment);
 }
 
@@ -330,10 +348,10 @@ function buildModal() {
 }
 
 function renderModal(project) {
-  modalRefs.title.textContent = t(project.titleKey);
+  modalRefs.title.textContent = getProjectTitle(project);
   modalRefs.teaser.textContent = t(project.teaserKey);
   modalRefs.image.src = project.image;
-  modalRefs.image.alt = t(project.titleKey);
+  modalRefs.image.alt = getProjectTitle(project);
 
   modalRefs.tags.replaceChildren(
     ...project.tagKeys.map((tagKey) => createBadge(tagKey))

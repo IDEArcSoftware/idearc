@@ -138,11 +138,27 @@
       <path d="M10.2 9.1 15 12l-4.8 2.9z" fill="currentColor" />
     </symbol>
     <symbol id="icon-wreath" viewBox="0 0 64 64">
-      <circle cx="32" cy="32" r="23" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.35" stroke-dasharray="4 6" />
-      <path d="M22 13c-7 7-10 21-2 32 1.8 2.6 4.3 4.9 7.2 6.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      <path d="M17.5 24l6.5 2.5M16 33l7 2.5M17.5 42l7 2.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-      <path d="M42 13c7 7 10 21 2 32-1.8 2.6-4.3 4.9-7.2 6.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      <path d="M46.5 24l-6.5 2.5M48 33l-7 2.5M46.5 42l-7 2.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+      <defs>
+        <path id="wreath-leaf" d="M0-4.9C2.4-3.5 2.4 3.5 0 4.9C-2.4 3.5-2.4-3.5 0-4.9Z" />
+      </defs>
+      <g fill="currentColor">
+        <g id="wreath-side-left">
+          <use href="#wreath-leaf" transform="translate(16 8) rotate(-18) scale(1 1.1)" />
+          <use href="#wreath-leaf" transform="translate(14.6 12.8) rotate(-28) scale(1.02 1.1)" />
+          <use href="#wreath-leaf" transform="translate(13.8 18) rotate(-35) scale(1.02 1.12)" />
+          <use href="#wreath-leaf" transform="translate(13.4 23.6) rotate(-44) scale(1.04 1.14)" />
+          <use href="#wreath-leaf" transform="translate(13.8 29.2) rotate(-52) scale(1.05 1.14)" />
+          <use href="#wreath-leaf" transform="translate(15 34.7) rotate(-60) scale(1.06 1.16)" />
+          <use href="#wreath-leaf" transform="translate(16.8 39.7) rotate(-67) scale(1.08 1.16)" />
+          <use href="#wreath-leaf" transform="translate(19.6 44) rotate(-73) scale(1.1 1.17)" />
+          <use href="#wreath-leaf" transform="translate(23.3 47.5) rotate(-78) scale(1.12 1.18)" />
+          <use href="#wreath-leaf" transform="translate(27.3 50.1) rotate(-82) scale(1.13 1.18)" />
+          <use href="#wreath-leaf" transform="translate(22.6 56.1) rotate(-64) scale(1.1 1.16)" />
+          <use href="#wreath-leaf" transform="translate(27.8 57.4) rotate(-82) scale(1.1 1.16)" />
+        </g>
+        <use href="#wreath-side-left" transform="translate(64 0) scale(-1 1)" />
+        <ellipse cx="32" cy="59.2" rx="1.6" ry="1.5" />
+      </g>
     </symbol>
   </svg>
 
@@ -204,11 +220,8 @@
             <div class="award-content">
               <h3 data-i18n="awardBursaSetbasiTitle">Bursa Setbaşı-Yeşil-Emirsultan Tarihi Aksı Kentsel Tasarım Fikir Yarışması</h3>
               <p class="award-summary" data-i18n="awardBursaSetbasiSummary">Eşdeğer mansiyon (Aralık 2025) – Kentsel Nakış projesi</p>
-              <div class="award-badge" aria-hidden="true">
-                <svg class="award-wreath" viewBox="0 0 64 64" focusable="false">
-                  <use href="#icon-wreath"></use>
-                  <text x="32" y="37" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">M</text>
-                </svg>
+              <div class="award-badge award-badge-label" aria-hidden="true">
+                <span class="award-badge-text" data-i18n="awardBadgeMention">Mansiyon</span>
               </div>
             </div>
           </article>
@@ -230,11 +243,8 @@
             <div class="award-content">
               <h3 data-i18n="awardAntakyaTitle">Antakya Köprübaşı Kent Meydanı ve Yakın Çevresi Kentsel Tasarım Proje Yarışması</h3>
               <p class="award-summary" data-i18n="awardAntakyaSummary">Üçüncü mansiyon (Kasım 2021) – Kentsel tasarım ve ulaşım danışmanlığı</p>
-              <div class="award-badge" aria-hidden="true">
-                <svg class="award-wreath" viewBox="0 0 64 64" focusable="false">
-                  <use href="#icon-wreath"></use>
-                  <text x="32" y="37" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">M</text>
-                </svg>
+              <div class="award-badge award-badge-label" aria-hidden="true">
+                <span class="award-badge-text" data-i18n="awardBadgeMention">Mansiyon</span>
               </div>
             </div>
           </article>
@@ -256,11 +266,8 @@
             <div class="award-content">
               <h3 data-i18n="awardKadikoyTitle">Kadıköy Meydanı Kentsel Tasarım Yarışması</h3>
               <p class="award-summary" data-i18n="awardKadikoySummary">Üçüncü mansiyon (Ekim 2020) – Ulaşım planlama ve trafik danışmanlığı</p>
-              <div class="award-badge" aria-hidden="true">
-                <svg class="award-wreath" viewBox="0 0 64 64" focusable="false">
-                  <use href="#icon-wreath"></use>
-                  <text x="32" y="37" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">M</text>
-                </svg>
+              <div class="award-badge award-badge-label" aria-hidden="true">
+                <span class="award-badge-text" data-i18n="awardBadgeMention">Mansiyon</span>
               </div>
             </div>
           </article>
@@ -295,11 +302,8 @@
             <div class="award-content">
               <h3 data-i18n="awardBuffaloTitle">Aim for the Sky: Buffalo Skyway Corridor Competition</h3>
               <p class="award-summary" data-i18n="awardBuffaloSummary">United States of America · Kısa liste (Ocak 2020) – Ulaşım planlama ve trafik danışmanlığı</p>
-              <div class="award-badge" aria-hidden="true">
-                <svg class="award-wreath" viewBox="0 0 64 64" focusable="false">
-                  <use href="#icon-wreath"></use>
-                  <text x="32" y="37" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">S</text>
-                </svg>
+              <div class="award-badge award-badge-label" aria-hidden="true">
+                <span class="award-badge-text" data-i18n="awardBadgeShortlisted">Kısa Liste</span>
               </div>
             </div>
           </article>

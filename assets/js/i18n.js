@@ -3,6 +3,18 @@ import { DEFAULT_LANG, LANG_STORAGE_KEY } from './config.js';
 
 let currentLang = DEFAULT_LANG;
 const listeners = new Set();
+const tokenValues = {
+  year: () => String(new Date().getFullYear())
+};
+
+function formatTranslation(value) {
+  if (typeof value !== 'string') return value;
+
+  return value.replace(/\{(\w+)\}/g, (match, token) => {
+    const resolver = tokenValues[token];
+    return typeof resolver === 'function' ? resolver() : match;
+  });
+}
 
 export function getCurrentLang() {
   return currentLang;
@@ -11,7 +23,7 @@ export function getCurrentLang() {
 export function t(key, fallback = '') {
   const dict = translations[currentLang] || {};
   const defaultDict = translations[DEFAULT_LANG] || {};
-  return dict[key] || defaultDict[key] || fallback || key;
+  return formatTranslation(dict[key] || defaultDict[key] || fallback || key);
 }
 
 function updateTextContent() {
